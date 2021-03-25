@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+    <title>Card with image animation and modal on click</title>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet"> 
+	
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script>
+	jQuery(document).ready(function ($) {
+            $('.show').click(function () { //same as on('click', function(){}); I just prefer this syntax
+                var target = $(this).attr('data-target'); //this will be card1 if the first is clicked.
+                $('.' + target).slideToggle('slow'); //add . for class selector and use target to find the right element
+            });
+
+            $('.close').click(function () { //close button
+                $(this).parent().slideToggle('slow'); //find the nearest parent and close it
+            });
+        });
+	</script>
+   
+</head>
+<body>
+
+    <div class="container">
+	<br/>
+	<h5>Bootstrap Card with image animation and modal on click</h5>
+	<br/>
+        <div class="row card-deck">
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-image">
+                        <div class="wrap">
+                            <img class="img-fluid" src="img/flower2.jpeg" alt="image 1">
+                        </div><!-- card image -->
+                    </div>
+                    <div class="card-content bg-light text-dark">
+                        <span class="card-title">Some Title</span>
+                        <button type="button" id="show" data-target="show1" class="show btn btn-custom float-right" aria-label="Left Align"><i class="fa fa-ellipsis-v"></i></button>
+                    </div><!-- card content -->
+                    <div class="card-reveal show1">
+                        <span class="card-title">Card Title</span> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div><!-- card reveal -->
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-image">
+                        <div class="wrap">
+                            <img class="img-fluid" src="img/flower1.jpeg" alt="image 2">
+                        </div><!-- card image -->
+                    </div>
+                    <div class="card-content bg-light text-dark">
+                        <span class="card-title">Some Title</span>
+                        <button type="button" id="show2" data-target="show2" class="show btn btn-custom float-right" aria-label="Left Align"><i class="fa fa-ellipsis-v"></i></button>
+                    </div><!-- card content -->
+                    <div class="card-reveal show2">
+                        <span class="card-title">Card Title</span> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div><!-- card reveal -->
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-image">
+                        <div class="wrap">
+                            <img class="img-fluid" src="img/flower3.jpg" alt="image 3">
+                        </div><!-- card image -->
+                    </div>
+                    <div class="card-content bg-light text-dark">
+                        <span class="card-title">Some Title</span>
+                        <button type="button" id="show3" data-target="show3" class="show btn btn-custom float-right" aria-label="Left Align">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </button>
+                    </div><!-- card content -->
+                    <div class="card-reveal show3">
+                        <span class="card-title">Card Title</span> <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div><!-- card reveal -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
